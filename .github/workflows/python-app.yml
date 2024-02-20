@@ -1,0 +1,52 @@
+# This workflow will install Python dependencies and run tests with LlamaIndex
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    environment: Actions
+
+    steps:
+    - uses: actions/setup-python@v3 #actions/checkout@v3
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.11"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install poetry
+        poetry config virtualenvs.create false
+        poetry install --no-root --no-dev --no-directory
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+    - name: Set up vector index
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        python app/engine/generate.py
+    - name: Start up test server
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        MODEL: gpt-4-1106-preview
+      run: |
+        python main.py &
+        sleep 10
+    - name: Test with pytest
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        TONIC_VALIDATE_API_KEY: ${{ secrets.TONIC_VALIDATE_API_KEY }}
+        PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      run: |
+        pytest

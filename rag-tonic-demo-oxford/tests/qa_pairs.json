@@ -1,0 +1,62 @@
+[
+  {
+    "essay": "siliconvalley.txt",
+    "question": "What key components are necessary to create a technology hub according to Paul Graham?",
+    "answer": "The key components to create a technology hub are rich people and nerds.",
+    "quote": "I think you only need two kinds of people to create a technology hub: rich people and nerds."
+  },
+  {
+    "essay": "siliconvalley.txt",
+    "question": "What is the influence of geography on where great cities historically developed, and how has that changed in modern times?",
+    "answer": "Historically, great cities developed on waterways for economical trade, but in modern times, a great city can be established anywhere if it attracts the right people.",
+    "quote": "All great cities were located on waterways, because cities made money by trade, and water was the only economical way to ship. Now you could make a great city anywhere, if you could get the right people to move there."
+  },
+  {
+    "essay": "conformism.txt",
+    "question": "How are people classified according to their degree and aggressiveness of conformism?",
+    "answer": "People are classified into four types based on their degree and aggressiveness of conformism: aggressively conventional-minded, passively conventional-minded, passively independent-minded, and aggressively independent-minded.",
+    "quote": "The resulting four quadrants define four types of people. Starting in the upper left and going counter-clockwise: aggressively conventional-minded, passively conventional-minded, passively independent-minded, and aggressively independent-minded."
+  },
+  {
+    "essay": "conformism.txt",
+    "question": "What is the main danger of restricting the discussion of certain ideas?",
+    "answer": "Restricting the discussion of certain ideas is dangerous because it not only affects the topics targeted by the restrictions but also propagates back into any topic that yields implications in the forbidden areas, potentially stifling innovation and free thought.",
+    "quote": "The second reason it's dangerous to ban the discussion of ideas is that ideas are more closely related than they look. Which means if you restrict the discussion of some topics, it doesn't only affect those topics. The restrictions propagate back into any topic that yields implications in the forbidden ones."
+  },
+  {
+    "essay": "airbnb.txt",
+    "question": "What was the long-term goal of Airbnb as explained to potential investors?",
+    "answer": "Airbnb's long-term goal was to become the market in accommodation, similar to how eBay is for stuff.",
+    "quote": "Did they explain the long-term goal of being the market in accommodation the way eBay is in stuff? That seems like it would be huge."
+  },
+  {
+    "essay": "airbnb.txt",
+    "question": "In the early days, how were the Airbnb founders financing their startup?",
+    "answer": "The Airbnb founders initially funded themselves by selling breakfast cereal.",
+    "quote": "Be sure to ask about how they funded themselves with breakfast cereal."
+  },
+  {
+    "essay": "usa.txt",
+    "question": "What is the outcome of American companies letting focus groups design their cars?",
+    "answer": "American cars continue to lose market share because the customer does not truly want what they think they want, and focus groups fail to capture the essence of good design that sophisticated buyers seek.",
+    "quote": "Letting focus groups design your cars for you only wins in the short term. In the long term, it pays to bet on good design."
+  },
+  {
+    "essay": "usa.txt",
+    "question": "Why are software and movies successful in the United States despite the just do it approach?",
+    "answer": "Software and movies are malleable mediums that benefit from boldness and the ability to quickly adapt during creation, which aligns well with the American ethos of speed and innovation.",
+    "quote": "I think we get away with this in movies and software because they're both malleable mediums. Boldness pays."
+  },
+  {
+    "essay": "googles.txt",
+    "question": "What often happens to startups that turn down acquisition offers?",
+    "answer": "Startups that turn down acquisition offers usually end up doing better, often receiving a bigger offer later or going for an IPO.",
+    "quote": "From the evidence I've seen so far, startups that turn down acquisition offers usually end up doing better."
+  },
+  {
+    "essay": "googles.txt",
+    "question": "Why do venture capitalists tend to be conservative when investing in startups?",
+    "answer": "Venture capitalists are often conservative because the large size of their investments makes them cautious, they are investing other people's money which heightens their fear of making risky decisions, and many are not technical experts, so they don't fully understand the innovations behind the startups they invest in.",
+    "quote": "The large size of their investments makes them conservative. Plus they're investing other people's money, which makes them worry they'll get in trouble if they do something risky and it fails. Plus most of them are money guys rather than technical guys, so they don't understand what the startups they're investing in do."
+  }
+]
