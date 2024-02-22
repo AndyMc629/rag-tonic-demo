@@ -9,6 +9,7 @@ from app.engine import get_chat_engine
 
 chat_router = r = APIRouter()
 
+import logging
 
 class _Message(BaseModel):
     role: MessageRole
@@ -28,6 +29,7 @@ async def chat(
     data: _ChatData,
     chat_engine: BaseChatEngine = Depends(get_chat_engine),
 ) -> _Result:
+    logger = logging.getLogger("uvicorn")
     # check preconditions and get last message
     if len(data.messages) == 0:
         raise HTTPException(
@@ -48,9 +50,11 @@ async def chat(
         )
         for m in data.messages
     ]
+    logger.info(f"Got messages: {messages}")
 
     # query chat engine
     response = await chat_engine.achat(lastMessage.content, messages)
+    logger.info(f"Got response: {response}")
     return _Result(
         result=_Message(
             role=MessageRole.ASSISTANT, 

@@ -16,9 +16,13 @@ jobs:
 
     runs-on: ubuntu-latest
     environment: Actions
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./rag-tonic-demo-oxford
 
     steps:
-    - uses: actions/setup-python@v3 #actions/checkout@v3
+    - uses: actions/checkout@v3
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
       with:
