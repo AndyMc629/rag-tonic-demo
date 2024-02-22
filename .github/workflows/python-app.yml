@@ -39,12 +39,14 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
+        poetry shell
         python app/engine/generate.py
     - name: Start up test server
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        MODEL: gpt-4-1106-preview
+        MODEL: gpt-3.5-turbo #gpt-4-1106-preview
       run: |
+        poetry shell
         python main.py &
         sleep 10
     - name: Test with pytest
