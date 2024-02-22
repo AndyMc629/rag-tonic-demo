@@ -38,7 +38,8 @@ jobs:
         poetry install --no-root --no-dev --no-directory
     - name: Set PYTHONPATH
       #run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
-      run: echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+      #run: echo "export PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+      run: "python -c; import sys; sys.path.append('.'); print(sys.path)"
     - name: Set up vector index
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
