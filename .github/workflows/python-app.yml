@@ -24,7 +24,7 @@ jobs:
     steps:
     - name: set pythonpath
       run: | #trying this!
-        echo "PYTHONPATH=rag-tonic-demo-oxford" >> $GITHUB_ENV 
+        echo "PYTHONPATH=/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV 
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
