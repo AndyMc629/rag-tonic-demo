@@ -17,11 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: Actions
     defaults:
-      run:
+      run: 
         shell: bash
         working-directory: ./rag-tonic-demo-oxford
 
     steps:
+    - name: set pythonpath
+      run: | #trying this!
+        echo "PYTHONPATH=rag-tonic-demo-oxford" >> $GITHUB_ENV 
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
@@ -39,14 +42,12 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        poetry shell
         python app/engine/generate.py
     - name: Start up test server
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         MODEL: gpt-3.5-turbo #gpt-4-1106-preview
       run: |
-        poetry shell
         python main.py &
         sleep 10
     - name: Test with pytest
