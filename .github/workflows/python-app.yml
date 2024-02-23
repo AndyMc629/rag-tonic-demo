@@ -22,9 +22,6 @@ jobs:
         working-directory: ./rag-tonic-demo-oxford
 
     steps:
-    # - name: set pythonpath
-    #   run: | #trying this!
-    #     echo "PYTHONPATH=/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV 
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
@@ -38,16 +35,10 @@ jobs:
         poetry install --no-root --no-dev --no-directory
     - name: Set PYTHONPATH
       run: echo "PYTHONPATH=/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV
-      #run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
-      #run: echo "export PYTHONPATH=$PYTHONPATH:/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV
-      # run: |
-      #   python -c "import sys; sys.path.append('.'); print(sys.path)"
     - name: Set up vector index
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        echo $PYTHONPATH
-        echo $(pwd)
         python app/engine/generate.py
     - name: Start up test server
       env:
