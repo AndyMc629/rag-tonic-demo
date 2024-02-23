@@ -45,6 +45,8 @@ jobs:
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
+        echo $PYTHONPATH
+        echo $(pwd)
         python app/engine/generate.py
     - name: Start up test server
       env:
