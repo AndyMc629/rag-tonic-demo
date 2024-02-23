@@ -37,8 +37,9 @@ jobs:
         poetry config virtualenvs.create false
         poetry install --no-root --no-dev --no-directory
     - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV
       #run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
-      run: echo "export PYTHONPATH=$PYTHONPATH:/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV
+      #run: echo "export PYTHONPATH=$PYTHONPATH:/home/runner/work/rag-tonic-demo/rag-tonic-demo/rag-tonic-demo-oxford" >> $GITHUB_ENV
       # run: |
       #   python -c "import sys; sys.path.append('.'); print(sys.path)"
     - name: Set up vector index
