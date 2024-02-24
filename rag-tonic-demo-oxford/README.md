@@ -54,3 +54,5 @@ To learn more about LlamaIndex, take a look at the following resources:
 - [LlamaIndex Documentation](https://docs.llamaindex.ai) - learn about LlamaIndex.
 
 You can check out [the LlamaIndex GitHub repository](https://github.com/run-llama/llama_index) - your feedback and contributions are welcome!
+
+Updating the example.
